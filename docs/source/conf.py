@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'SPHirit'
-copyright = '2026, Jack_Sparrow'
-author = 'Jack_Sparrow'
+copyright = '2026, CESI'
+author = 'CESI'
 release = '1'
 
 # -- General configuration ---------------------------------------------------

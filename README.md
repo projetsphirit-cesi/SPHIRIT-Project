@@ -19,7 +19,7 @@ Voir le [guide d'installation](docs/source/installation.rst)
 
 ## Documentation
 
-La documentation complète est disponible sur *****
+La documentation complète est disponible sur [documentation technique](docs/source/index.rst)
 
 ## Technologies
 

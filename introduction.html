@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; Documentation SPHirit 1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="SPHirit Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SPHirit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contexte">Contexte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#la-methode-sph">La méthode SPH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">Références</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#projets-connexes">Projets connexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exemples.html">Exemples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Guide D’utilisation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SPHirit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/introduction.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h1>
+<section id="contexte">
+<h2>Contexte<a class="headerlink" href="#contexte" title="Lien vers cette rubrique"></a></h2>
+<p>SPHirit est un simulateur de mécanique des fluides 2D développé dans le cadre
+d’un projet académique au CESI, en collaboration avec des enseignants-chercheurs.</p>
+<p>Il s’inscrit dans une démarche de développement et de validation de modèles
+numériques appliqués à des problématiques académiques et industrielles.</p>
+</section>
+<section id="la-methode-sph">
+<h2>La méthode SPH<a class="headerlink" href="#la-methode-sph" title="Lien vers cette rubrique"></a></h2>
+<p>La méthode <strong>SPH (Smoothed Particle Hydrodynamics)</strong> est une méthode particulaire
+sans maillage. Au lieu de discrétiser l’espace en cellules fixes, le fluide est
+représenté par un ensemble de particules qui se déplacent librement.</p>
+<p>Chaque particule porte des propriétés physiques (masse, vitesse, pression) et
+interagit avec ses voisines via une fonction de lissage appelée <strong>kernel</strong>.</p>
+<p>La formulation <strong>ALE (Arbitrary Lagrangian-Eulerian)</strong> utilisée ici permet de
+combiner les avantages des approches Lagrangienne et Eulérienne pour améliorer
+la précision des simulations.</p>
+</section>
+<section id="references">
+<h2>Références<a class="headerlink" href="#references" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Violeau, D. (2012). <em>Fluid Mechanics and the SPH Method</em>. Oxford University Press.</p></li>
+<li><p>Liu, M.B. &amp; Liu, G.R. (2010). Smoothed Particle Hydrodynamics: an Overview and
+Recent Developments. <em>Archives of Computational Methods in Engineering</em>, 17, 25-76.</p></li>
+</ul>
+</section>
+<section id="projets-connexes">
+<h2>Projets connexes<a class="headerlink" href="#projets-connexes" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinxsys.org">SPHinXsys</a> — bibliothèque SPH professionnelle en C++</p></li>
+<li><p><a class="reference external" href="https://www.openfoam.com">OpenFOAM</a> — référence en simulation de fluides open-source</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="SPHirit Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, CESI.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide D’utilisation &mdash; Documentation SPHirit 1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Exemples" href="exemples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SPHirit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exemples.html">Exemples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide D’utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lancer-l-interface">Lancer l’interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#choisir-un-cas-test">Choisir un cas test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parametres-numeriques">Paramètres numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options-physiques">Options physiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lancer-la-simulation">Lancer la simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valider-les-resultats">Valider les résultats</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SPHirit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Guide D’utilisation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/utilisation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guide-d-utilisation">
+<h1>Guide D’utilisation<a class="headerlink" href="#guide-d-utilisation" title="Lien vers cette rubrique"></a></h1>
+<p>SPHirit dispose d’une interface graphique interactive qui permet de configurer
+et lancer une simulation sans modifier le code source.</p>
+<section id="lancer-l-interface">
+<h2>Lancer l’interface<a class="headerlink" href="#lancer-l-interface" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Ouvrez <code class="docutils literal notranslate"><span class="pre">code/Interface.ipynb</span></code> dans VS Code</p></li>
+<li><p>Vérifiez que le kernel <code class="docutils literal notranslate"><span class="pre">sph</span> <span class="pre">(3.14.5)</span></code> est sélectionné en haut à droite</p></li>
+<li><p>Cliquez sur <strong>Exécuter tout</strong> dans la barre du notebook</p></li>
+</ol>
+<img alt="Interface SPHirit v9.10" class="align-center" src="_images/interface.png" />
+<p>L’interface se divise en trois sections : <strong>Configuration</strong>, <strong>Paramètres</strong> et <strong>Options</strong>.</p>
+</section>
+<section id="choisir-un-cas-test">
+<h2>Choisir un cas test<a class="headerlink" href="#choisir-un-cas-test" title="Lien vers cette rubrique"></a></h2>
+<p>Dans le menu <strong>Test Case</strong>, sélectionnez parmi les cas disponibles :</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Cas test</p></th>
+<th class="head"><p>Durée estimée</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DamBreak</span></code></p></td>
+<td><p>Quelques minutes</p></td>
+<td><p>Rupture de barrage — idéal pour débuter</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TGV</span></code></p></td>
+<td><p>~30 min</p></td>
+<td><p>Taylor-Green Vortex — validation mathématique</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Poiseuille</span></code></p></td>
+<td><p>~30 min</p></td>
+<td><p>Écoulement de Poiseuille — validation viscosité</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Jet</span></code></p></td>
+<td><p>~1h</p></td>
+<td><p>Impact de jets</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Funnel</span></code></p></td>
+<td><p>~3h</p></td>
+<td><p>Écoulement visqueux dans un entonnoir (ISO 2431)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Car</span></code></p></td>
+<td><p>~3h</p></td>
+<td><p>Interaction fluide-structure (FSI)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BodyF</span></code></p></td>
+<td><p>~3h</p></td>
+<td><p>Corps flottant (SPHERIC test-12)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TGVmesh</span></code></p></td>
+<td><p>~1h</p></td>
+<td><p>Test de déplacement de maillage</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour une première utilisation, choisissez <strong>DamBreak</strong> — c’est le cas
+le plus rapide et le plus facile à visualiser.</p>
+</div>
+</section>
+<section id="parametres-numeriques">
+<h2>Paramètres numériques<a class="headerlink" href="#parametres-numeriques" title="Lien vers cette rubrique"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Paramètre</p></th>
+<th class="head"><p>Valeur par défaut</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Resolution (dx)</strong></p></td>
+<td><p>1</p></td>
+<td><p>Résolution spatiale — plus la valeur est basse, plus la simulation est précise et lente</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>h/dx</strong></p></td>
+<td><p>2.0</p></td>
+<td><p>Rayon de lissage SPH (recommandé : entre 1.2 et 2.5)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CFL</strong></p></td>
+<td><p>0.1</p></td>
+<td><p>Nombre de Courant — contrôle la stabilité numérique</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C0/Umax</strong></p></td>
+<td><p>7.0</p></td>
+<td><p>Vitesse du son artificielle</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Time Integration</strong></p></td>
+<td><p>Euler</p></td>
+<td><p>Schéma temporel : Euler (1), RK2 (2) ou RK3 (3)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Spatial Order</strong></p></td>
+<td><p>O0</p></td>
+<td><p>Ordre de reconstruction spatiale : O0, O1 (MLS) ou O2 (Quad)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ALE Method</strong></p></td>
+<td><p>Wass</p></td>
+<td><p>Méthode ALE : Lloyd, Wass, Shepard ou Coupled</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="options-physiques">
+<h2>Options physiques<a class="headerlink" href="#options-physiques" title="Lien vers cette rubrique"></a></h2>
+<img alt="Section options de l'interface" class="align-center" src="_images/interface_options.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Kernel C2</strong></p></td>
+<td><p>Utilise un kernel de classe C2 (recommandé)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Renormalisation</strong></p></td>
+<td><p>Active la matrice de renormalisation (incompatible avec MLS)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Viscosité (Morris)</strong></p></td>
+<td><p>Active la viscosité physique basée sur la formulation de Morris</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shepard Correction</strong></p></td>
+<td><p>Correction du gradient SPH par la méthode de Shepard</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Particle Shifting</strong></p></td>
+<td><p>Active le déplacement de particules pour limiter les artefacts numériques</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Filtre Densité</strong></p></td>
+<td><p>Filtre de densité pour éviter l’expansion en surface libre</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bruit Position</strong></p></td>
+<td><p>Ajoute un bruit aléatoire sur les positions initiales</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lancer-la-simulation">
+<h2>Lancer la simulation<a class="headerlink" href="#lancer-la-simulation" title="Lien vers cette rubrique"></a></h2>
+<p>Une fois la configuration choisie, cliquez sur <strong>▶ LANCER SIMULATION</strong>.</p>
+<img alt="Bouton lancer simulation" class="align-center" src="_images/interface_bouton.png" />
+<p>La console affiche un résumé de la configuration appliquée puis la simulation démarre.
+Les fichiers résultats <code class="docutils literal notranslate"><span class="pre">.vtu</span></code> sont sauvegardés automatiquement dans un dossier
+nommé d’après vos paramètres (ex: <code class="docutils literal notranslate"><span class="pre">DamBreaklagrangianwassp0dx1.0...</span></code>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Les fichiers VTK peuvent rapidement occuper plusieurs Go d’espace disque.
+Veillez à disposer d’un dossier de sortie hors OneDrive.</p>
+</div>
+</section>
+<section id="valider-les-resultats">
+<h2>Valider les résultats<a class="headerlink" href="#valider-les-resultats" title="Lien vers cette rubrique"></a></h2>
+<p>Une fois la simulation terminée, ouvrez <code class="docutils literal notranslate"><span class="pre">code/Validation.ipynb</span></code> pour comparer
+vos résultats avec les données de la littérature scientifique.</p>
+<p>Pour visualiser les particules en mouvement, ouvrez les fichiers <code class="docutils literal notranslate"><span class="pre">.vtu</span></code>
+avec <strong>ParaView</strong> (voir <span class="xref std std-doc">visualisation</span>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="exemples.html" class="btn btn-neutral float-left" title="Exemples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, CESI.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

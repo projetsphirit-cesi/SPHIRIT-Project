@@ -1,0 +1,123 @@
+==========================================================================================
+# *                   ███████╗██████╗ ██╗  ██╗██╗██████╗ ██╗████████╗
+# *                   ██╔════╝██╔══██╗██║  ██║██║██╔══██╗██║╚══██╔══╝
+# *                   ███████╗██████╔╝███████║██║██████╔╝██║   ██║
+# *                   ╚════██║██╔═══╝ ██╔══██║██║██╔══██╗██║   ██║
+# *                   ███████║██║     ██║  ██║██║██║  ██║██║   ██║
+# *                   ╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝   ╚═╝
+# * — Smoothed Particle Hydrodynamics Integrated Resource for Instruction and Teaching ─
+==========================================================================================
+
+## 1. PRÉSENTATION DU PROJET
+
+**Objectif scientifique:**
+Développer un solveur SPH couplé ALE pour simuler des écoulements fluides avec
+structures mobiles/déformables, dans un cadre de validation numérique.
+
+**Langage principal:** Python 3.x | **Environnement:** NumPy, SciPy, Matplotlib
+
+> 📘 Pour lancer une simulation rapidement, voir le fichier `QuickStartGuide`
+> (workflow en 5 cellules du notebook `Allrun.ipynb`).
+
+
+## 2. STRUCTURE DU PROJET
+
+www/
+│
+├── Allrun.ipynb
+├── QuickStartGuide
+├── ReadMe
+├── .vscode/
+│   └── settings.json
+├── constant/
+│   ├── ale_properties.py
+│   ├── numerical_properties.py
+│   ├── physical_properties.py
+│   ├── sph_properties.py
+│   └── __init__.py
+├── system/
+│   ├── control_dict.py
+│   ├── sph_schemes.py
+│   └── __init__.py
+├── src/
+│   ├── __init__.py
+│   ├── Solver.py
+│   ├── run_solver.py
+│   ├── discretization/
+│   │   ├── ale_mesh.py
+│   │   └── __init__.py
+│   ├── kernels/
+│   │   ├── sph_kernels.py
+│   │   └── __init__.py
+│   ├── physics/
+│   │   ├── riemann_solver.py
+│   │   ├── get_density.py
+│   │   ├── boundary_conditions.py
+│   │   ├── sph_interactions.py
+│   │   └── __init__.py
+│   ├── mesh/
+│   │   ├── funnel_mesh.py
+│   │   ├── primitives.py
+│   │   └── __init__.py
+│   └── time_integration/
+│       ├── euler.py
+│       ├── runge_kutta2.py
+│       └── __init__.py
+├── cases/
+│   ├── TGV/
+│   │   ├── setup.py
+│   │   └── __init__.py
+│   ├── dambreak/
+│   │   ├── setup.py
+│   │   └── __init__.py
+│   └── funnel/
+│       ├── setup.py
+│       └── __init__.py
+└── io_/
+    ├── vtk.py
+    └── __init__.py
+
+
+## 3. SCHÉMA NUMÉRIQUE
+
+
+- **Noyau SPH** (`src/kernels/sph_kernels.py`, `kernel_cubic`) : noyau cubique
+  (spline d'ordre 3, support 2h), avec constante de normalisation 2D
+  `10/(7πh²)`. Le gradient associé (`kernel_grad`) est utilisé pour toutes
+  les dérivées spatiales.
+- **Équation d'état** (`get_pressure` dans `sph_kernels.py`, et son inverse
+  `get_density.py`) : équation de Tait, forme couramment utilisée en SPH
+  faiblement compressible (WCSPH) : `p = B·((ρ/ρ0)^γ − 1)`.
+- **Couplage hydrodynamique** : solveur de Riemann acoustique linéarisé
+  (`src/physics/riemann_solver.py`), avec coefficient de relaxation
+  `beta = 0.5` entre états gauche/droite.
+- **Intégration temporelle** : Euler explicite (`euler.py`) ou Runge-Kutta 2
+  prédicteur-correcteur (`runge_kutta2.py`), sélection via `ctrl.mode_rk`
+  (1 = Euler, 2 = RK2).
+- **Pas de temps** : critère CFL acoustique, `dt = CFL·h / (c0 + max(|v|))`
+  (recalculé à chaque itération dans `Solver.py`).
+
+
+## 5. GLOSSAIRE
+
+- **SPH** (Smoothed Particle Hydrodynamics) : méthode numérique sans maillage
+  où le fluide est discrétisé en particules portant masse/volume/champs.
+- **ALE** (Arbitrary Lagrangian-Eulerian) : la vitesse du "maillage" de calcul
+  est dissociée de la vitesse matérielle du fluide (entre Lagrangien pur et
+  Eulérien pur).
+- **CFL** : condition de stabilité numérique limitant le pas de temps en
+  fonction de la vitesse du son et des vitesses locales.
+- **Coefficient de Shepard** : somme normalisée des poids du noyau SPH autour
+  d'une particule ; mesure la qualité du support voisinage (`shepard` dans
+  `Solver.py`).
+
+
+## 6. OBJECTIFS
+
+-merge avec version 9 <--- objectif actuels
+-implémentation des cas test préexistant dans la version 9
+-vectorisation des fonctions
+-implémentation du parralele process
+-passage en CUDA python
+-implémentation de la 3D
+-implémentation de la POO (programmation orientée objet)

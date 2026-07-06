@@ -1,0 +1,82 @@
+# ==========================================================================================
+# QUICK START GUIDE — SPHIRIT
+# ==========================================================================================
+
+
+## 1. PRE-REQUIS
+
+- Python 3.x — paquets : numpy, scipy, matplotlib
+- Ouvrir le notebook depuis le dossier www/ (working directory obligatoire)
+
+
+## 2. WORKFLOW — 5 CELLULES DANS L'ORDRE
+
+### Cellule 1 — Seule cellule à modifier
+
+```python
+ctrl.test_case  = 'dambreak'   # cas à simuler
+ctrl.finaltime = 2.0          # durée simulée (s)
+ctrl.save      = 50           # fréquence de sauvegarde VTK (pas)
+ctrl.mode_rk   = 1            # intégrateur : 1 = Euler, 2 = RK2
+
+ale.mesh_mode  = 'lagrangian' # 'lagrangian' | 'eulerian' | 'wass'
+
+sph.dx = 0.05
+sph.h  = 1.2 * sph.dx
+```
+
+Le dossier de sortie VTK est reconstruit automatiquement en fin de cellule :
+    <test_case>_<mesh_mode>_<mode_ale>     ex : dambreak_lagrangian_wass
+
+### Cellules 2 à 5 — Exécuter sans modifier
+
+- Cellule 2 : chargement des propriétés physiques et numériques
+- Cellule 3 : initialisation via cases/<test_case>/setup.py
+- Cellule 4 : lancement du solveur, logs Step/t/dt/N en continu
+- Cellule 5 : visualisation matplotlib de l'état final
+
+
+## 3. CAS DISPONIBLES
+
+| testCase   | Description                        |
+|------------|------------------------------------|
+| 'dambreak' | Rupture de barrage — validation    |
+| 'TGV'      | Taylor-Green Vortex — périodique   |
+| 'funnel'   | Entonnoir — écoulement confiné     |
+
+
+## 4. RECETTES PRETES A LANCER
+
+### damBreak — validation rapide de la chaîne complète
+```python
+ctrl.test_case='dambreak'; ctrl.finaltime=1.0; ctrl.save=20; ctrl.mode_rk=1
+ale.mesh_mode='lagrangian'; sph.dx=0.05; sph.h=1.2*sph.dx
+```
+
+### TGV — stabilité et comportement périodique
+```python
+ctrl.test_case='TGV'; ctrl.finaltime=0.5; ctrl.save=20; ctrl.mode_rk=1
+ale.mesh_mode='lagrangian'; sph.dx=0.04; sph.h=1.2*sph.dx
+```
+
+### funnel — écoulement confiné
+```python
+ctrl.test_case='funnel'; ctrl.finaltime=4.0; ctrl.save=50; ctrl.mode_rk=1
+ale.mesh_mode='lagrangian'; sph.dx=0.05; sph.h=1.2*sph.dx
+```
+
+
+## 5. DEPANNAGE
+
+ModuleNotFoundError   → vérifier que le notebook est lancé depuis www/
+                        et que sys.path.insert(0, os.path.abspath('.')) est présent
+
+Erreur cases.X.setup  → vérifier l'orthographe exacte de ctrl.test_case
+                        et la présence de cases/<test_case>/setup.py
+
+Simulation lente      → augmenter dx, réduire finaltime, augmenter save
+
+Aucun fichier VTK     → vérifier ctrl.vtk_dir affiché en fin de Cellule 1
+                        et les droits d'écriture dans www/
+
+# ==========================================================================================

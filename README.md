@@ -26,3 +26,10 @@ La documentation complète est disponible sur [documentation technique](https://
 - Visualisation : ParaView
 
 ## Contributeurs
+
+Geoffrey POSÉ-VAY
+Lucyle BERTOLOTTI
+Denis DAMAS
+Baptiste LIGAULT
+Gilles-alexis RENAUT
+

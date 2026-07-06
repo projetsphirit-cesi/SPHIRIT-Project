@@ -1,4 +1,4 @@
-# SPHirit
+# SPHIRIT
 
 Simulateur de mécanique des fluides 2D basé sur la méthode SPH (Smoothed Particle Hydrodynamics) avec formulation ALE (Arbitrary Lagrangian-Eulerian).
 

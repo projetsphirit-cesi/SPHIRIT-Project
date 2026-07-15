@@ -12,7 +12,3 @@ def kernel_grad(rij, r, h):
     dw_r = np.where(q <= 1.0, sigma_g * (-3.0*q + 2.25*q**2),
            np.where(q <= 2.0, -sigma_g * 0.75 * (2.0 - q)**2, 0.0))
     return (dw_r / (r + 1e-12)) * rij, dw_r
-
-def get_pressure(rho,B,rho0,gamma):
-    # Équation de Tait (sans clipping agressif pour garder la cohésion)
-    return B * (np.power(rho / rho0, gamma) - 1.0)

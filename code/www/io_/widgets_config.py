@@ -214,7 +214,7 @@ def _apply_config (w):
         ctrl.save = int(w['save_text'].value)
     except ValueError:
         print("⚠  save invalide — valeur conservée")
-    ctrl.mode_rk           = w['mode_rk_dropdown'].value
+    ctrl.mode_rk           = 1 if w['mode_rk_dropdown'].value == 'Euler' else 2
     
     # ── ALE properties ────────────────────────────────────────────────────
     ale.mesh_mode          = w['mesh_mode_dropdown'].value

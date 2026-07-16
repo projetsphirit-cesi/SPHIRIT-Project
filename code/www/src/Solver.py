@@ -2,8 +2,9 @@ import numpy as np
 import os
 import constant.ale_properties as _ale_props
 from scipy.spatial import cKDTree
-from src.kernels.sph_kernels import kernel_cubic, get_pressure
+from src.kernels.sph_kernels import kernel_cubic
 from src.physics.sph_interactions import compute_shepard_coefficients, compute_derivatives
+from src.physics.get_density import get_pressure
 from src.discretization.ale_mesh import compute_v_mesh_full
 from src.time_integration.euler import euler_step
 from src.time_integration.runge_kutta2 import rk2_step
@@ -60,7 +61,7 @@ def run(state,ctrl,phys,sph_params):
             dt = CFL*h / (c0 + max_v + 1e-12)
 
         if step % save == 0:
-            fname = os.path.join(vtk_dir, f'test_case{step:05d}_t{t:.6f}.vtk')
+            fname = os.path.join(vtk_dir, f'test_case{step:05d}.vtk')
             write_vtk(fname, pos, vel, v_mesh-vel, pres, types, rho,
                       vol, m, num_nb, shepard, wall_normals,
                       s_g, s_d, grad_s_g, grad_s_d,

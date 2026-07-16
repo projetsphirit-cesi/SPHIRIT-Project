@@ -2,7 +2,7 @@ import numpy as np
 import constant.ale_properties as _ale_props
 import constant.numerical_properties as _num_props
 import system.control_dict as _ctrl
-from src.kernels.sph_kernels import get_pressure
+from src.physics.get_density import get_pressure
 
 def euler_step(pos, vel, rho, pres, vol, m, accel, drho,
                mask_f, dt, g,

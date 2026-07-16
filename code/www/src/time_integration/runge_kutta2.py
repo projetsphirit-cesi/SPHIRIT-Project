@@ -2,7 +2,7 @@ import numpy as np
 import constant.ale_properties as _ale_props
 from src.physics.sph_interactions import compute_derivatives
 from src.discretization.ale_mesh import compute_v_mesh_full
-from src.kernels.sph_kernels import get_pressure
+from src.physics.get_density import get_pressure
 
 
 def rk2_step(pos, vel, rho, pres, vol, m,
